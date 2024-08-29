@@ -18,7 +18,7 @@ export const Auth = () => {
 
     function onShare() {
         shareToStory(
-            'https://drive.google.com/u/0/drive-viewer/AKGpiha6g6jLKBT5YUyqDiNEXnwD4OIY_GtTT5Y0jCw-PDKe_v2sp14BseVRZrdI7K1jwXtmAjLBUzpZwh1GgTrWK77PO6Z4ZQMcR2s=s1600-rw-v1',
+            'https://drive.google.com/u/0/drive-viewer/AKGpihawqEmA5Du50QeZKTLyQ5E9DjpqbrXgxWGcHMSqVLw_LQ-yw1NwQu1TOdUf8adga9cPjE_CtSTXsfYu9U5aNs885A9IoJbWsw=s1600-rw-v1',
             {
                 widget_link: {
                     name: 'START GAME',
