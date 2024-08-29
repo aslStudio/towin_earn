@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import styles from './Main.module.scss'
+import { useTelegram } from '@/shared/lib/hooks/useTelegram'
 
-export const Main = () => (
-    <h1>TITLE</h1>
-)
+export const Main = () => {
+    const { setHeaderColor } = useTelegram()
+
+    useEffect(() => {
+        setHeaderColor('#FFFFFF')
+    }, [])
+
+    return (
+        <h1>TITLE</h1>
+    )
+}
