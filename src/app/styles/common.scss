@@ -1,22 +1,32 @@
 @import "variables";
 
-$mainFontFamily: 'RubikBubbles';
-$secondFontFamily: 'Acrom';
+$mainFontFamily: 'Inter';
 
 @font-face {
     font-family: $mainFontFamily;
     src:
             local('MainFont'),
-            url("../../shared/assets/fonts/RubikBubbles-Regular.woff") format('woff'),
-            url("../../shared/assets/fonts/RubikBubbles-Regular.woff2") format('woff2');
+            url("../../shared/assets/fonts/Inter-Regular.woff") format('woff'),
+            url("../../shared/assets/fonts/Inter-Regular.woff2") format('woff2');
+    font-weight: 400;
 }
 
 @font-face {
-    font-family: $secondFontFamily;
+    font-family: $mainFontFamily;
     src:
-            local('SecondFont'),
-            url("../../shared/assets/fonts/Acrom-Regular.woff") format('woff'),
-            url("../../shared/assets/fonts/Acrom-Regular.woff2") format('woff2');
+            local('MainFont'),
+            url("../../shared/assets/fonts/Inter-SemiBold.woff") format('woff'),
+            url("../../shared/assets/fonts/Inter-SemiBold.woff2") format('woff2');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: $mainFontFamily;
+    src:
+            local('MainFont'),
+            url("../../shared/assets/fonts/Inter-Bold.woff") format('woff'),
+            url("../../shared/assets/fonts/Inter-Bold.woff2") format('woff2');
+    font-weight: 700;
 }
 
 html {

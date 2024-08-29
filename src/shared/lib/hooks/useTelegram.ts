@@ -6,6 +6,13 @@ type TelegramWindow = {
             expand: () => void
             ready: () => void
             openTelegramLink: (data: string) => void
+            setHeaderColor: (color: string) => void
+            shareToStory: (img: string, params?: {
+                widget_link: {
+                    url: string
+                    name: string
+                }
+            }) => void
             HapticFeedback: {
                 impactOccurred: (v: 'light' | 'medium' | 'heavy' | 'rigid' | 'soft') => void
             },
@@ -32,12 +39,32 @@ export const useTelegram = () => {
         }
     }
 
+    function setHeaderColor(color: string) {
+        tg.Telegram.WebApp.setHeaderColor(color)
+    }
+
     function expand() {
         try {
             tg.Telegram.WebApp.ready()
             tg.Telegram.WebApp.expand()
         } catch (e) {
             console.log(e)
+        }
+    }
+
+    function shareToStory(
+        url: string,
+        params?: {
+            widget_link: {
+                url: string
+                name: string
+            }
+        } 
+    ) {
+        try {
+            tg.Telegram.WebApp.shareToStory(url, params)
+        } catch (e) {
+            alert(e)
         }
     }
 
@@ -63,5 +90,7 @@ export const useTelegram = () => {
         expand,
         haptic,
         sendInviteLink,
+        setHeaderColor,
+        shareToStory,
     }
 }

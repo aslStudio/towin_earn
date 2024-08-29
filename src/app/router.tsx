@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {Route, Routes, useLocation} from "react-router-dom";
 
 import { Main } from "@/pages/Main/Main";
+import { Auth } from "@/pages/Auth/Auth";
 
 export const RouterView = React.memo(() => {
     const location = useLocation();
@@ -24,6 +25,7 @@ export const RouterView = React.memo(() => {
             }}
         >
             <Routes location={displayLocation}>
+                <Route path={'/'} element={<Auth />} />
                 <Route path={'/main'} element={<Main />} />
             </Routes>
         </div>
