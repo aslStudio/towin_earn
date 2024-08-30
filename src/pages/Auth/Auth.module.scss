@@ -33,12 +33,18 @@
 }
 
 .title {
-    font-size: 32px;
-    line-height: 38px;
+    font-size: 28px;
+    line-height: 35px;
     width: 100%;
     text-align: center;
 
     color: #fff;
+    margin-bottom: 0;
+
+    @media (min-height: 680px) {
+        font-size: 32px;
+        line-height: 38px;
+    }
 }
 
 .description {
@@ -46,10 +52,15 @@
     line-height: 23px;
     width: 100%;
     text-align: center;
-    margin-top: 6vh;
-    margin-bottom: 3.3vh;
+    margin-top: 3vh;
+    margin-bottom: 2vh;
 
     color: #fff;
+
+    @media (min-height: 680px) {
+        margin-top: 6vh;
+        margin-bottom: 3.3vh;
+    }
 }
 
 .button {

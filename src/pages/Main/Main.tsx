@@ -11,6 +11,8 @@ export const Main = () => {
     }, [])
 
     return (
-        <h1>TITLE</h1>
+        <div>
+            
+        </div>
     )
 }
