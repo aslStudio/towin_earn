@@ -1,0 +1,80 @@
+.root {
+    display: flex;
+    flex-direction: row;
+
+    box-sizing: border-box;
+    padding-right: 34px;
+    height: 68px;
+}
+
+.is {
+    &-gold {
+        padding-left: 8px;
+
+        & .avatar {
+            margin-right: 8px;
+        }
+    }
+
+    &-silver {
+        padding-left: 14px;
+
+        & .avatar {
+            margin-right: 14px;
+        }
+    }
+
+    &-bronse {
+        padding-left: 14px;
+
+        & .avatar {
+            margin-right: 14px;
+        }
+    }
+
+    &-none {
+        padding-left: 16px;
+
+        & .avatar {
+            margin-right: 16px;
+        }
+    }
+}
+
+.info {
+    flex: 1;
+}
+
+.title {
+    font-size: 17px;
+    line-height: 22px;
+    
+    margin-bottom: 2px;
+
+    color: #000;
+
+    & span {
+        color: #707579;
+    }
+}
+
+.description {
+    font-size: 15px;
+    line-height: 20px;
+
+    color: #707579;
+}
+
+.stars {
+    display: flex;
+    align-items: center;
+
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 700;
+
+    background: linear-gradient(180deg, #f9ea4f 0%, #a87f14 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

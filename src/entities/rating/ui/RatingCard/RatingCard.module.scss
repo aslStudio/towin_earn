@@ -13,7 +13,6 @@
 
     & .avatar {
         top: 23px;
-        border-color: #EFC43E;
     }
 
     & .amount {
@@ -26,7 +25,6 @@
 
     & .avatar {
         top: 25px;
-        border-color: #C0C0C0;
     }
 
     & .amount {
@@ -39,7 +37,6 @@
 
     & .avatar {
         top: 25px;
-        border-color: #CD7F32;
     }
 
     & .amount {
@@ -79,7 +76,7 @@
 }
 
 .avatar {
-    position: absolute;
+    position: absolute!important;
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;

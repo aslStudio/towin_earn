@@ -38,7 +38,12 @@ export const RatingCard = React.memo<RatingCardProps>(({
     return (
         <div className={[styles.root, styles[`is-${view}`], className].join(' ')}>
             <div className={styles.background} />
-            <Avatar className={styles.avatar} src={avatar} size={size} />
+            <Avatar 
+                className={styles.avatar} 
+                src={avatar} 
+                view={view}
+                size={size} 
+            />
             <div className={styles.container} >
                 <p className={styles.rating}>{rating}</p>
                 <div className={styles.info}>
