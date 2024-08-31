@@ -1,0 +1,33 @@
+.king-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+    margin-right: 16px;
+}
+
+.timer,
+.index {
+    display: block;
+    font-size: 17px;
+    line-height: 22px;
+    padding-left: 16px;
+    box-sizing: border-box;
+    margin-left: auto;
+}
+
+.timer {
+    color: #000;
+}
+
+.index {
+    color: rgba(0, 0, 0, 0.2);
+}
+
+.divider {
+    width: 100%;
+    height: 0.5px;
+    background-color: rgba(244, 244, 247, 1);
+}

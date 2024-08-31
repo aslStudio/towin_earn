@@ -3,6 +3,7 @@ import {Route, Routes, useLocation} from "react-router-dom";
 
 import { Main } from "@/pages/Main/Main";
 import { Auth } from "@/pages/Auth/Auth";
+import { Earn } from "@/pages/Earn/Earn";
 
 export const RouterView = React.memo(() => {
     const location = useLocation();
@@ -27,6 +28,7 @@ export const RouterView = React.memo(() => {
             <Routes location={displayLocation}>
                 <Route path={'/'} element={<Auth />} />
                 <Route path={'/last'} element={<Main />} />
+                <Route path={'/earn'} element={<Earn />} />
             </Routes>
         </div>
     )

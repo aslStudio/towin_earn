@@ -1,0 +1,22 @@
+.root {
+    width: 100vw;
+    height: 100vh;
+
+    overflow-x: hidden;
+    overflow-y: scroll;
+
+    padding-top: 20px;
+    padding-bottom: 113px;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    box-sizing: border-box;
+}
+
+.is-disabled {
+    overflow-y: hidden;
+}
+
+.is-expand-offset {
+    padding-bottom: 254px;
+}

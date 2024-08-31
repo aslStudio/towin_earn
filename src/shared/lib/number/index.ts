@@ -23,7 +23,7 @@ export function toFormattedNumber(value: number) {
     } else {
         newValue = parseInt(removeSpaces, 10)
             .toString()
-            .replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+            .replace(/\B(?=(\d{3})+(?!\d))/g, ',')
     }
 
     return newValue

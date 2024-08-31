@@ -25,7 +25,25 @@
     }
 
     &-s {
-        padding-top: 10px 23px;
+        padding: 10px 15px;
+
+        &.rounded {
+            &-both {
+                border-radius: 10px;
+            }
+
+            &-top {
+                border-radius: 10px 10px 0 0;
+            }
+
+            &-bottom {
+                border-radius: 0 0 10px 10px;
+            }
+        }  
+    }
+
+    &-ms {
+        padding: 12px 16px;
 
         &.rounded {
             &-both {
@@ -43,7 +61,7 @@
     }
 
     &-m {
-        padding: 14px 16px;
+        padding: 12px 16px;
 
         &.rounded {
             &-both {

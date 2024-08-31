@@ -5,6 +5,8 @@ import {useTelegram} from "@/shared/lib/hooks/useTelegram";
 
 import { RouterView } from './router'
 import { NavBar } from '@/widgets/NavBar';
+import { GetInLineModal } from '@/widgets/GetInLineModal/GetInLineModal';
+import { TopListModal } from '@/widgets/TopListModal';
 
 function App() {
     const { expand } = useTelegram()
@@ -17,6 +19,8 @@ function App() {
       <BrowserRouter>
           <RouterView/>
           <NavBar />
+          <GetInLineModal />
+          <TopListModal />
       </BrowserRouter>
   );
 }

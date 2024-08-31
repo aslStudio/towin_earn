@@ -1,0 +1,1 @@
+export { TopRating } from './TopRating'

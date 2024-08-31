@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.ceab7491.css",
-    "main.js": "/static/js/main.e324871b.js",
+    "main.css": "/static/css/main.b3ed9c1b.css",
+    "main.js": "/static/js/main.2d27ae1a.js",
     "static/js/453.2c396120.chunk.js": "/static/js/453.2c396120.chunk.js",
     "static/media/decoration.png": "/static/media/decoration.9296054f369ae65a8446.png",
     "static/media/Inter-Bold.woff": "/static/media/Inter-Bold.3cf58596269ad13bb894.woff",
@@ -10,13 +10,14 @@
     "static/media/Inter-Bold.woff2": "/static/media/Inter-Bold.5055fedf1fc1dfae80aa.woff2",
     "static/media/Inter-SemiBold.woff2": "/static/media/Inter-SemiBold.6ba02431a98484a2cbde.woff2",
     "static/media/Inter-Regular.woff2": "/static/media/Inter-Regular.c0db08626b6256071bdc.woff2",
+    "static/media/king-hill.png": "/static/media/king-hill.c88a0a357ba7537af8f1.png",
     "index.html": "/index.html",
-    "main.ceab7491.css.map": "/static/css/main.ceab7491.css.map",
-    "main.e324871b.js.map": "/static/js/main.e324871b.js.map",
+    "main.b3ed9c1b.css.map": "/static/css/main.b3ed9c1b.css.map",
+    "main.2d27ae1a.js.map": "/static/js/main.2d27ae1a.js.map",
     "453.2c396120.chunk.js.map": "/static/js/453.2c396120.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ceab7491.css",
-    "static/js/main.e324871b.js"
+    "static/css/main.b3ed9c1b.css",
+    "static/js/main.2d27ae1a.js"
   ]
 }

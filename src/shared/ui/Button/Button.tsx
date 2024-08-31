@@ -6,7 +6,7 @@ import styles from './Button.module.scss'
 
 export type ButtonProps = React.PropsWithChildren<{
     className?: string
-    view?: 'dark' | 'surface' | 'blue' | 'transparent' | 'blur'
+    view?: 'dark' | 'surface' | 'blue' | 'transparent' | 'blur' | 'green'
     size?: 'xs' | 's' | 'm'
     weight?: 'regular' | 'semibold' | 'bold'
     icon?: IconName

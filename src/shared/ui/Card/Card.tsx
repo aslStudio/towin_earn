@@ -4,8 +4,8 @@ import styles from './Card.module.scss'
 
 export type CardProps = React.PropsWithChildren<{
     className?: string
-    size?: 'xs' | 's' | 'm' | 'l'
-    rounded?: 'top' | 'bottom' | 'both'
+    size?: 'xs' | 's' | 'm' | 'ms' | 'l'
+    rounded?: 'top' | 'bottom' | 'both' | 'none'
     onClick?: () => void
 }>
 

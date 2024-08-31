@@ -1,0 +1,70 @@
+.root {
+    position: fixed;
+    bottom: 84px;
+    left: 0;
+    width: 100%;
+    z-index: 4;
+
+    transform: translateY(200%);
+
+    transition: 0.3s ease;
+    transition-property: transform;
+}
+
+.root.is-active {
+    transform: translateY(0);
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.title {
+    display: block;
+    font-size: 17px;
+    line-height: 22px;
+    color: #000;
+}
+
+.button {
+    width: auto;
+    margin-left: auto;
+}
+
+.input {
+    margin-top: 18px;
+    outline: none;
+    box-sizing: border-box;
+
+    width: 100%;
+    padding: 13px 16px;
+    color: #000;
+    border: 1px solid rgba(204, 204, 204, 1);
+    border-radius: 12px;
+
+    font-size: 17px;
+    line-height: 22px;
+
+    &::placeholder {
+        color: rgba(162, 172, 176, 1);
+    }
+}
+
+.badge {
+    display: block;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(52, 199, 89, 1);
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 13px;
+    line-height: 20px;
+    margin-left: 6px;
+}

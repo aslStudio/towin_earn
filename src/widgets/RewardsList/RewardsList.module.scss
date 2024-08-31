@@ -1,0 +1,25 @@
+.button {
+    outline: none;
+    border: none;
+    padding: 10px 32px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 10px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.05);
+
+    & p {
+        font-size: 15px;
+        line-height: 20px;
+        text-align: center;
+        color: #000;
+        font-weight: 700;
+        margin-left: 10px;
+        margin-right: 8px;
+    }
+}

@@ -1,0 +1,1 @@
+export { RatingCard, type RatingCardProps } from './RatingCard'

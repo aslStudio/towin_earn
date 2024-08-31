@@ -9,6 +9,9 @@
 
     border: none;
     outline: none;
+
+    transition: 0.3s ease;
+    transition-property: background-color;
 }
 
 .icon {
@@ -73,6 +76,11 @@
     &-blur {
         background: rgba(255, 255, 255, 0.3);
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    }
+
+    &-green {
+        background-color: rgba(52, 199, 89, 1);
+        color: #FFFFFF;
     }
 }
 
