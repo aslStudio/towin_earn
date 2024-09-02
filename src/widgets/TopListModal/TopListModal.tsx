@@ -5,7 +5,8 @@ import { useTopListModal } from './model'
 
 import styles from './TopListModal.module.scss'
 import { Tabs } from "@/shared/ui/Tabs"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { TopList, topListModel, TopListType } from "@/entities/topList"
 
 const tabsData = [
     {
@@ -24,7 +25,7 @@ const tabsData = [
 
 export const TopListModal = () => {
     const { isTopListModal, closed } = useTopListModal()
-    const [active, setActive] = useState(1)
+    const { topListType, listRequested } = topListModel.useTopList()
 
     return (
         <Modal
@@ -50,10 +51,11 @@ export const TopListModal = () => {
                 />
             </div>
             <Tabs 
-                active={active} 
+                active={topListType} 
                 data={tabsData} 
-                onChange={setActive}
+                onChange={listRequested}
             />
+            <TopList />
         </Modal>
     )
 }

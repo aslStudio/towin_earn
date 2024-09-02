@@ -16,7 +16,7 @@ export enum TopListType {
 }
 
 const fetchListFx = createEffect(async (type: TopListType) => {
-    await new Promise(resolve => setTimeout(resolve, 2000))
+    await new Promise(resolve => setTimeout(resolve, 300))
 
     return {
         data: new Array(20).fill(1).map((_, index) => ({
@@ -30,29 +30,40 @@ const fetchListFx = createEffect(async (type: TopListType) => {
 })
 
 const listRequested = createEvent<TopListType>()
+const listFetched = createEvent()
 
 const $list = createStore<TopListItem[]>([])
-const $topList = createStore<TopListType>(TopListType.SEASON)
+const $topListType = createStore<TopListType>(TopListType.SEASON)
 const $isPending = fetchListFx.pending
 
 sample({
+    clock: listFetched,
+    fn: () => TopListType.SEASON,
+    target: listRequested,
+})
+
+sample({
     clock: listRequested,
-    target: [$topList, fetchListFx],
+    target: [$topListType, fetchListFx],
 })
 
 sample({
     clock: fetchListFx.doneData,
-    fn: ({ data }) => data,
+    fn: ({ data }) => {
+        console.log('requested')
+        return data
+    },
     target: $list,
 })
 
 const useTopList = () => ({
     list: useUnit($list),
-    topList: useUnit($topList),
+    topListType: useUnit($topListType),
     isPending: useUnit($isPending),
     listRequested: useUnit(listRequested),
 })
 
 export const topListModel = {
-    useTopList
+    useTopList,
+    listFetched,
 }

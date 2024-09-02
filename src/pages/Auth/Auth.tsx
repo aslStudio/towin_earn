@@ -13,7 +13,7 @@ export const Auth = () => {
     const { setHeaderColor, shareToStory } = useTelegram()
     
     function onLetsGo() {
-        navigate('/last')
+        navigate('/record')
     }
 
     function onShare() {

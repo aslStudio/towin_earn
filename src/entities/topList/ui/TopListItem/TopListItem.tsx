@@ -66,7 +66,13 @@ export const TopListItemCell = React.memo<TopListItemCellProps>(({
     }, [id])
 
     return (
-        <div className={[styles.root, styles[`is-${view}`]].join(' ')}>
+        <div 
+            className={[
+                styles.root, 
+                styles[`is-${view}`], 
+                className ? className : ''
+            ].join(' ')}
+        >
             <Avatar className={styles.avatar} {...avatarProps} />
             <div className={styles.info}>
                 <p className={styles.title}>#{id} <span>{name}</span></p>

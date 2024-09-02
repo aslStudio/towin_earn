@@ -51,18 +51,18 @@
     border: 5px solid;
 
     &-none {
-        border-color: transparent;
+        border-color: transparent!important;
     }
 
     &-gold {
-        border-color: #EFC43E;
+        border-color: #EFC43E!important;
     }
 
     &-silver {
-        border-color: #C0C0C0;
+        border-color: #C0C0C0!important;
     }
 
     &-bronse {
-        border-color: #CD7F32;
+        border-color: #CD7F32!important;
     }
 }

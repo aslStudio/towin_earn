@@ -1,0 +1,16 @@
+@keyframes rotate360 {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.root {
+    width: 80px;
+    height: 80px;
+
+    animation: rotate360 1s infinite linear;
+}
