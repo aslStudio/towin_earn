@@ -18,7 +18,7 @@ export const Record = () => {
 
     function onShare() {
         shareToStory(
-            'https://drive.google.com/file/d/1xYHjyk1YnCes0VkOXmsCxGRNRB94HHL_/view?usp=sharing',
+            'https://drive.google.com/u/0/drive-viewer/AKGpihax6GYi-4d01YFHGOhXw5PE5jSTdcrtckTgZFDALc1-Gw1woVDwhYPP0tGHO9twm-3Ayt3JDMEXkgpy4iChKUclsOKx0P1jtQ=s1600-rw-v1',
             {
                 widget_link: {
                     name: 'VIEW YOUR TOKENS',
