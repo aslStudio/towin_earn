@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.22391a75.css",
+    "main.css": "/static/css/main.c020279d.css",
     "main.js": "/static/js/main.bfc831fb.js",
     "static/js/453.2c396120.chunk.js": "/static/js/453.2c396120.chunk.js",
     "static/media/background.png": "/static/media/background.1c370eae9f857f150686.png",
@@ -14,12 +14,12 @@
     "static/media/king-hill.png": "/static/media/king-hill.c88a0a357ba7537af8f1.png",
     "static/media/spinner-brand.png": "/static/media/spinner-brand.3c00c228cbb050a75c46.png",
     "index.html": "/index.html",
-    "main.22391a75.css.map": "/static/css/main.22391a75.css.map",
+    "main.c020279d.css.map": "/static/css/main.c020279d.css.map",
     "main.bfc831fb.js.map": "/static/js/main.bfc831fb.js.map",
     "453.2c396120.chunk.js.map": "/static/js/453.2c396120.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.22391a75.css",
+    "static/css/main.c020279d.css",
     "static/js/main.bfc831fb.js"
   ]
 }
