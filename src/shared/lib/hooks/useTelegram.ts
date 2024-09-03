@@ -76,7 +76,7 @@ export const useTelegram = () => {
         }
     }
 
-    const isValidPlaform = useMemo(() => {
+    const isDesktopPlatform = useMemo(() => {
         return (
             tg.Telegram.WebApp.platform !== 'macos' && 
             tg.Telegram.WebApp.platform !== 'windows' && 
@@ -85,7 +85,7 @@ export const useTelegram = () => {
     }, [tg.Telegram.WebApp.platform])
 
     return {
-        isValidPlaform,
+        isDesktopPlatform,
 
         expand,
         haptic,
