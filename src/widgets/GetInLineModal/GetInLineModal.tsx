@@ -1,8 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react"
-import { createPortal } from "react-dom"
 import { useLocation } from "react-router-dom"
 
-import { Card } from "@/shared/ui/Card"
 import { Avatar } from "@/shared/ui/Avatar"
 import { Button } from "@/shared/ui/Button"
 

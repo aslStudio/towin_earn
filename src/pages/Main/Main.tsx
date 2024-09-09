@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import Lottie from 'react-lottie'
 
 import { useTelegram } from '@/shared/lib/hooks/useTelegram'
 import { ViewerCard } from '@/widgets/ViewerCard'

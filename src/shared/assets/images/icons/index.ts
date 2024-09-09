@@ -11,6 +11,7 @@ import IconChevronRight from './icon-chevron-right.png'
 import IconLink from './icon-link.png'
 import IconTask from './icon-task.png'
 import IconClose from './icon-close.png'
+import IconLinkLight from './icon-link-light.png'
 
 export const icons = {
     'icon-share': IconShare,
@@ -26,4 +27,5 @@ export const icons = {
     'icon-link': IconLink,
     'icon-task': IconTask,
     'icon-close': IconClose,
+    'icon-link-light': IconLinkLight,
 }

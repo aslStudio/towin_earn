@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react"
 
 let interval: NodeJS.Timeout
 
-export const useTimer = (startTime: number) => {
+export const useTimer = (startTime: number, type: 'up' | 'down' = 'down') => {
     const [currTime, setCurrTime] = useState(startTime)
 
     const dottedViewWithHours = useMemo(() => {
@@ -37,7 +37,7 @@ export const useTimer = (startTime: number) => {
             const minutes = Math.floor(milliseconds / 60000);
             milliseconds %= 60000;
             const seconds = Math.floor(milliseconds / 1000);
-            return `${days} Days : ${hours} Hr : ${minutes} Min : ${seconds} Sec`;
+            return `${days < 10 ? `0${days}` : days} Days : ${hours < 10 ? `0${hours}` : hours} Hr : ${minutes < 10 ? `0${minutes}` : minutes} Min : ${seconds < 10 ? `0${seconds}` : seconds} Sec`;
         }
 
         return '00 Days : 00 Hr : 00 Min : 00 Sec'
@@ -45,14 +45,18 @@ export const useTimer = (startTime: number) => {
 
     useEffect(() => {
         interval = setInterval(() => {
-            if (currTime > 1000) {
-                setCurrTime(prevState => prevState - 1000)
+            if (type === 'down') {
+                if (currTime > 1000) {
+                    setCurrTime(prevState => prevState - 1000)
+                } else {
+                    setCurrTime(0)
+                    clearInterval(interval)
+                }
             } else {
-                setCurrTime(0)
-                clearInterval(interval)
+                setCurrTime(prevState => prevState + 1000)
             }
         }, 1000)
-    }, [startTime])
+    }, [startTime, type])
 
     return {
         dottedViewWithHours,

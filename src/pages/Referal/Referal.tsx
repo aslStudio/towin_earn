@@ -3,11 +3,12 @@ import { useEffect } from "react"
 
 import { images } from '@/shared/assets'
 
-import styles from './Auth.module.scss'
+import styles from './Referal.module.scss'
 import { Button } from "@/shared/ui/Button"
 import { useNavigate } from "react-router-dom"
+import { IconBase } from "@/shared/ui/IconBase"
 
-export const Auth = () => {
+export const Referral = () => {
     const navigate = useNavigate()
 
     const { setHeaderColor, shareToStory } = useTelegram()
@@ -18,7 +19,7 @@ export const Auth = () => {
 
     function onShare() {
         shareToStory(
-            'https://drive.google.com/u/0/drive-viewer/AKGpihYISBUbfor_kXlJhWilUnjxr7sl_F7rPlLC6rTpup1ch2qiyKW1BJRL9qEb5l6u8GxxHBrZwixzaI1WyYd1eU_KMJrHVuXMKOA=s1600-rw-v1',
+            'https://drive.google.com/u/0/drive-viewer/AKGpihby-tHD5atYK6isl1y8h_B8m2WpLvCE_nKAmkkHaAj_lyuXf7TjIhK5VP7Jlven2-Vs9KnvCpvtAQ52WKFDC3ej23PcawroHbY=s1600-rw-v1',
             {
                 widget_link: {
                     name: 'START GAME',
@@ -40,14 +41,18 @@ export const Auth = () => {
         />
         <div className={styles.container}>
             <h1 className={styles.title}>
-                Shall we find out <br /> 
-                who will be the last?
+                Get a spot with the help <br /> 
+                of your friends!
             </h1>
             <p className={styles.description}>
-                The person on whom it stops <br />
-                will take the entire prize pool <br />
-                in Telegram Stars ⭐️ <br />
+                Invite 5 friends and get 5 spots <br />
+                in the queue as a gift! ⭐️ <br />
             </p>
+            <div className={styles.referral}>
+                <p>tow.im/ceosashajdjdjdjdjdjjdjdjdjj...</p>
+                <IconBase icon={'icon-link-light'} width={24} height={24} />
+            </div>
+            <p className={styles.subscription}>The more friends you invite, the more places you will have!</p>
             <Button 
                 className={styles.button}
                 view={'blur'} 

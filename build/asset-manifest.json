@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.e42c1b16.css",
-    "main.js": "/static/js/main.d7d3858a.js",
-    "static/js/453.2c396120.chunk.js": "/static/js/453.2c396120.chunk.js",
+    "main.css": "/static/css/main.b2a1a53a.css",
+    "main.js": "/static/js/main.ab9edfc8.js",
+    "static/js/453.70514826.chunk.js": "/static/js/453.70514826.chunk.js",
     "static/media/background.png": "/static/media/background.1c370eae9f857f150686.png",
     "static/media/decoration.png": "/static/media/decoration.9296054f369ae65a8446.png",
     "static/media/Inter-Bold.woff": "/static/media/Inter-Bold.3cf58596269ad13bb894.woff",
@@ -12,14 +12,15 @@
     "static/media/Inter-SemiBold.woff2": "/static/media/Inter-SemiBold.6ba02431a98484a2cbde.woff2",
     "static/media/Inter-Regular.woff2": "/static/media/Inter-Regular.c0db08626b6256071bdc.woff2",
     "static/media/king-hill.png": "/static/media/king-hill.c88a0a357ba7537af8f1.png",
+    "static/media/icon-star-gold.png": "/static/media/icon-star-gold.e50055d67a3e2839353f.png",
     "static/media/spinner-brand.png": "/static/media/spinner-brand.3c00c228cbb050a75c46.png",
     "index.html": "/index.html",
-    "main.e42c1b16.css.map": "/static/css/main.e42c1b16.css.map",
-    "main.d7d3858a.js.map": "/static/js/main.d7d3858a.js.map",
-    "453.2c396120.chunk.js.map": "/static/js/453.2c396120.chunk.js.map"
+    "main.b2a1a53a.css.map": "/static/css/main.b2a1a53a.css.map",
+    "main.ab9edfc8.js.map": "/static/js/main.ab9edfc8.js.map",
+    "453.70514826.chunk.js.map": "/static/js/453.70514826.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e42c1b16.css",
-    "static/js/main.d7d3858a.js"
+    "static/css/main.b2a1a53a.css",
+    "static/js/main.ab9edfc8.js"
   ]
 }

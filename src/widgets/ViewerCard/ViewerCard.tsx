@@ -8,11 +8,14 @@ import styles from './ViewerCard.module.scss'
 import { useTimer } from '@/shared/lib/hooks/useTimer'
 import { Avatar } from '@/shared/ui/Avatar'
 import { images } from '@/shared/assets'
+import { useNavigate } from 'react-router-dom'
+
+const image = 'https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL3BsYXlcLzBiN2Y0ZTliLWY1OWMtNDAyNC05ZjA2LWIzZGMxMjg1MGFiNy0xOTIwLTEwODAuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo4Mjh9fX0='
 
 export const ViewerCard = () => {
-    const image = 'https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL3BsYXlcLzBiN2Y0ZTliLWY1OWMtNDAyNC05ZjA2LWIzZGMxMjg1MGFiNy0xOTIwLTEwODAuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo4Mjh9fX0='
+    const navigate = useNavigate()
 
-    const { dottedViewWithHours } = useTimer(1_000_000)
+    const { dottedViewWithHours } = useTimer(1_000_000, 'up')
 
     return <Card size="l">
         <div className={styles.wrapper}>
@@ -36,7 +39,9 @@ export const ViewerCard = () => {
             view="dark"
             size="m"
             weight="semibold"
-            onClick={() => {}}
+            onClick={() => {
+                navigate('/record')
+            }}
         >
             Become a King
         </Button>
