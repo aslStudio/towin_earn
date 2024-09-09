@@ -16,16 +16,17 @@ const image = 'https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpY
 
 export const GetInLineModal = React.memo(() => {
     const location = useLocation()
-    const { isDesktopPlatform } = useTelegram()
+    const { isMobileDevice } = useTelegram()
     const { isGetInLineModal, opened, closed } = useGetInLineModal()
     const { currentLinePositions, currentLinePositionUpdated } = lineModel.useCurrentLinePositions()
     const [bottomOffset, setBottomOffset] = useState(0)
 
     const onFocus = useCallback(() => {
-        if (!isDesktopPlatform) {
+        if (isMobileDevice) {
             setBottomOffset(window.innerHeight / 2)
         }
-    }, [isDesktopPlatform])
+        // setBottomOffset(window.innerHeight / 2)
+    }, [isMobileDevice])
 
     function onBlur() {
         setBottomOffset(0)

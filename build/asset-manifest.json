@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.e42c1b16.css",
-    "main.js": "/static/js/main.c42e9007.js",
+    "main.js": "/static/js/main.d7d3858a.js",
     "static/js/453.2c396120.chunk.js": "/static/js/453.2c396120.chunk.js",
     "static/media/background.png": "/static/media/background.1c370eae9f857f150686.png",
     "static/media/decoration.png": "/static/media/decoration.9296054f369ae65a8446.png",
@@ -15,11 +15,11 @@
     "static/media/spinner-brand.png": "/static/media/spinner-brand.3c00c228cbb050a75c46.png",
     "index.html": "/index.html",
     "main.e42c1b16.css.map": "/static/css/main.e42c1b16.css.map",
-    "main.c42e9007.js.map": "/static/js/main.c42e9007.js.map",
+    "main.d7d3858a.js.map": "/static/js/main.d7d3858a.js.map",
     "453.2c396120.chunk.js.map": "/static/js/453.2c396120.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e42c1b16.css",
-    "static/js/main.c42e9007.js"
+    "static/js/main.d7d3858a.js"
   ]
 }
