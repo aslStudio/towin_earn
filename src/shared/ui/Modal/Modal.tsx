@@ -28,15 +28,13 @@ export const Modal = React.memo<ModalProps>(({
 
     return createPortal(
         <div className={classes}>
-            {withOverlay && (
-                <div 
-                    className={styles.overlay} 
-                    onClick={onClose} 
-                />
-            )}
-            <Card 
+            <div
+                className={styles.overlay}
+                onClick={onClose}
+            />
+            <Card
                 className={styles.card}
-                size="l" 
+                size="l"
                 rounded="top"
             >
                 {children}

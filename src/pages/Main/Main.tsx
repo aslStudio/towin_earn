@@ -12,6 +12,7 @@ export const Main = () => {
     const [isOpen, setIsOpen] = useState(false)
 
     useEffect(() => {
+        alert('OPEN MODAL')
         setIsOpen(true)
     }, []);
 
