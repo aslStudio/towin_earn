@@ -4,7 +4,7 @@ import { useUnit } from "effector-react"
 const opened = createEvent()
 const closed = createEvent()
 
-const $isGetInLineModal = createStore(true)
+const $isGetInLineModal = createStore(false)
     .on(opened, () => true)
     .on(closed, () => false)
 

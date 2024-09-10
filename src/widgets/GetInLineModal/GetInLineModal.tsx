@@ -1,5 +1,4 @@
-import React, { useCallback, useEffect, useMemo, useState } from "react"
-import { useLocation } from "react-router-dom"
+import React, { useCallback, useMemo, useState } from "react"
 
 import { Avatar } from "@/shared/ui/Avatar"
 import { Button } from "@/shared/ui/Button"
@@ -9,21 +8,22 @@ import { useGetInLineModal } from './model'
 import { Modal } from "@/shared/ui/Modal"
 import { lineModel } from "@/features/line"
 import { useTelegram } from "@/shared/lib/hooks/useTelegram"
+import Lottie from "react-lottie";
+import LottieConfig from "@/shared/assets/animations/test.json";
 
 const image = 'https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL3BsYXlcLzBiN2Y0ZTliLWY1OWMtNDAyNC05ZjA2LWIzZGMxMjg1MGFiNy0xOTIwLTEwODAuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo4Mjh9fX0='
 
 export const GetInLineModal = React.memo(() => {
-    const location = useLocation()
     const { isMobileDevice } = useTelegram()
-    const { isGetInLineModal, opened, closed } = useGetInLineModal()
+    const { isGetInLineModal, closed } = useGetInLineModal()
     const { currentLinePositions, currentLinePositionUpdated } = lineModel.useCurrentLinePositions()
+    const { isAnimation, animationHidden } = lineModel.useSuccessAnimation()
     const [bottomOffset, setBottomOffset] = useState(0)
 
     const onFocus = useCallback(() => {
         if (isMobileDevice) {
-            setBottomOffset(window.innerHeight / 2)
+            setBottomOffset(window.innerHeight / 2 - 20)
         }
-        // setBottomOffset(window.innerHeight / 2)
     }, [isMobileDevice])
 
     function onBlur() {
@@ -36,21 +36,30 @@ export const GetInLineModal = React.memo(() => {
         }
 
         return 'green'
-    }, [currentLinePositions])    
-
-    useEffect(() => {
-        if (location.pathname.includes('last')) {
-            opened()
-        } else {
-            closed()
-        }
-    }, [location, opened, closed])
+    }, [currentLinePositions])
     
     return (
         <Modal 
             withOverlay={false} 
             isActive={isGetInLineModal} 
             onClose={closed}>
+            {isAnimation && (
+                <div className={styles.animation}>
+                    <Lottie
+                        options={{
+                            loop: false,
+                            animationData: LottieConfig,
+                        }}
+                        width={window.innerWidth}
+                        eventListeners={[
+                            {
+                                eventName: 'complete',
+                                callback: animationHidden,
+                            }
+                        ]}
+                    />
+                </div>
+            )}
             <div className={styles.wrapper}>
                 <Avatar className={styles.avatar} src={image} size="s" />
                 <p className={styles.title}>North_South</p>
@@ -68,7 +77,7 @@ export const GetInLineModal = React.memo(() => {
             <input 
                 style={{marginBottom: bottomOffset}}
                 className={styles.input} 
-                placeholder="Write a Message"
+                placeholder="Message"
                 onFocus={onFocus}
                 onBlur={onBlur}
             />

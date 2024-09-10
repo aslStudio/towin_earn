@@ -1,12 +1,15 @@
+import React from "react"
+
 import { useTimer } from "@/shared/lib/hooks/useTimer"
 import { Card } from "@/shared/ui/Card"
 import { IconBase } from "@/shared/ui/IconBase"
+import { useToaster } from "@/shared/lib/providers"
+import { useCopyToClipboard } from "@/shared/lib/hooks/useCopy"
+import star from '@/shared/assets/animations/star.json'
+import lock from '@/shared/assets/animations/lock.json'
 
 import styles from './RemainsCard.module.scss'
-import React from "react"
-import { useToaster } from "@/shared/lib/providers"
-import { last } from "@/shared/assets/images"
-import { useCopyToClipboard } from "@/shared/lib/hooks/useCopy"
+import Lottie from "react-lottie";
 
 export type RemainsCardProps = {
     className?: string
@@ -40,6 +43,7 @@ export const RemainsCard = React.memo<RemainsCardProps>(({ className }) => {
         })
     }
 
+    // @ts-ignore
     return (
         <div className={className}>
             <Card size="s">
@@ -81,14 +85,34 @@ export const RemainsCard = React.memo<RemainsCardProps>(({ className }) => {
                     The last player will receive
                 </h5>
                 <div className={[styles.row, styles['present-row']].join(' ')}>
-                    <IconBase icon={'icon-star-gold'} width={40} height={40} />
-                    <p className={styles['response-amount']}>10,000</p>
-                    <img 
-                        className={styles.present} 
-                        src={last.Present} 
-                        alt="present" 
-                        onClick={openReferalToaster}
+                    <Lottie
+                        options={{
+                            loop: true,
+                            animationData: star,
+                        }}
+                        width={40}
+                        height={40}
+                        style={{
+                            margin: 0,
+                        }}
                     />
+                    <p className={styles['response-amount']}>10,000</p>
+                    <div
+                        className={styles.present}
+                        onClick={openReferalToaster}
+                    >
+                        <Lottie
+                            options={{
+                                loop: true,
+                                animationData: lock,
+                            }}
+                            width={42}
+                            height={42}
+                            style={{
+                                margin: 0,
+                            }}
+                        />
+                    </div>
                 </div>
             </div>
         </div>

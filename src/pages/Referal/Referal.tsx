@@ -1,5 +1,5 @@
 import { useTelegram } from "@/shared/lib/hooks/useTelegram"
-import { useEffect } from "react"
+import {useEffect, useState} from "react"
 
 import { images } from '@/shared/assets'
 
@@ -7,14 +7,21 @@ import styles from './Referal.module.scss'
 import { Button } from "@/shared/ui/Button"
 import { useNavigate } from "react-router-dom"
 import { IconBase } from "@/shared/ui/IconBase"
+import {useCopyToClipboard} from "@/shared/lib/hooks/useCopy";
+import {Loader} from "@/shared/ui/Loader";
+
+const mockReferral = 'tow.im/ceosashajdjdjdjdjdjjdjdjdjjjjjjj'
 
 export const Referral = () => {
     const navigate = useNavigate()
 
     const { setHeaderColor, shareToStory } = useTelegram()
+    const [_, copy] = useCopyToClipboard()
+    const [isLoading, setIsLoading] = useState(true)
     
     function onLetsGo() {
         navigate('/last')
+        setHeaderColor('#FFFFFF')
     }
 
     function onShare() {
@@ -30,10 +37,25 @@ export const Referral = () => {
     }
 
     useEffect(() => {
-        setHeaderColor('#47629B')
+        setHeaderColor('#000')
+        const image = new Image()
+        image.src = images.auth.Decoration
+        image.addEventListener('load', () => {
+            setIsLoading(false)
+        })
     }, [])
 
-    return <div className={styles.root}>
+    useEffect(() => {
+        if (isLoading) {
+            setHeaderColor('#47629B')
+        }
+    }, [isLoading, setHeaderColor]);
+
+    return <div className={[
+        styles.root,
+        isLoading ? styles['is-loading'] : styles['is-container']
+    ].join(' ')}>
+        <Loader className={styles.loader} />
         <img 
             src={images.auth.Decoration} 
             className={styles.image} 
@@ -48,8 +70,8 @@ export const Referral = () => {
                 Invite 5 friends and get 5 spots <br />
                 in the queue as a gift! ⭐️ <br />
             </p>
-            <div className={styles.referral}>
-                <p>tow.im/ceosashajdjdjdjdjdjjdjdjdjj...</p>
+            <div className={styles.referral} onClick={() => copy(mockReferral)}>
+                <p>{mockReferral}</p>
                 <IconBase icon={'icon-link-light'} width={24} height={24} />
             </div>
             <p className={styles.subscription}>The more friends you invite, the more places you will have!</p>
