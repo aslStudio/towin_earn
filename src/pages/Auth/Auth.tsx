@@ -6,15 +6,20 @@ import { images } from '@/shared/assets'
 import styles from './Auth.module.scss'
 import { Button } from "@/shared/ui/Button"
 import { useNavigate } from "react-router-dom"
+import {useGetInLineModal} from "@/widgets/GetInLineModal/model";
 
 export const Auth = () => {
     const navigate = useNavigate()
 
     const { setHeaderColor, shareToStory, haptic } = useTelegram()
+
+    const { opened } = useGetInLineModal()
     
     function onLetsGo() {
         haptic()
         navigate('/last')
+        setHeaderColor('#FFFFFF')
+        opened()
     }
 
     function onShare() {

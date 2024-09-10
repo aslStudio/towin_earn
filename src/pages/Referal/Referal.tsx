@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom"
 import { IconBase } from "@/shared/ui/IconBase"
 import {useCopyToClipboard} from "@/shared/lib/hooks/useCopy";
 import {Loader} from "@/shared/ui/Loader";
+import {useGetInLineModal} from "@/widgets/GetInLineModal/model";
 
 const mockReferral = 'tow.im/ceosashajdjdjdjdjdjjdjdjdjjjjjjj'
 
@@ -18,11 +19,14 @@ export const Referral = () => {
     const { setHeaderColor, shareToStory, haptic } = useTelegram()
     const [_, copy] = useCopyToClipboard()
     const [isLoading, setIsLoading] = useState(true)
-    
+
+    const { opened } = useGetInLineModal()
+
     function onLetsGo() {
         haptic()
         navigate('/last')
         setHeaderColor('#FFFFFF')
+        opened()
     }
 
     function onShare() {
