@@ -22,8 +22,8 @@ export const Main = () => {
                 <ViewerCard />
                 <RemainsCard className={styles['remains-card']} />
                 <KingList />
-                <GetInLineModal />
             </PageLayout>
+            <GetInLineModal />
         </>
     )
 }

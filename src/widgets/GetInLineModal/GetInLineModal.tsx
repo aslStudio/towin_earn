@@ -37,7 +37,7 @@ export const GetInLineModal = React.memo(() => {
     }, [currentLinePositions])
     
     return (
-        <Modal 
+        <Modal
             withOverlay={false} 
             isActive={true}
             onClose={() => {}}>
