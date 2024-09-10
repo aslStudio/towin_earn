@@ -13,9 +13,11 @@ import {useGetInLineModal} from "@/widgets/GetInLineModal/model";
 
 const image = 'https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL3BsYXlcLzBiN2Y0ZTliLWY1OWMtNDAyNC05ZjA2LWIzZGMxMjg1MGFiNy0xOTIwLTEwODAuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo4Mjh9fX0='
 
-export const GetInLineModal = React.memo(() => {
+export const GetInLineModal = React.memo<{
+    isActive: boolean
+    onClose: () => void
+}>(({ isActive, onClose }) => {
     const { isMobileDevice, haptic } = useTelegram()
-    const { isGetInLineModal, closed } = useGetInLineModal()
     const { currentLinePositions, currentLinePositionUpdated } = lineModel.useCurrentLinePositions()
     const { isAnimation, animationHidden } = lineModel.useSuccessAnimation()
     const [bottomOffset, setBottomOffset] = useState(0)
@@ -41,8 +43,8 @@ export const GetInLineModal = React.memo(() => {
     return (
         <Modal
             withOverlay={false} 
-            isActive={isGetInLineModal}
-            onClose={closed}>
+            isActive={isActive}
+            onClose={onClose}>
             {isAnimation && (
                 <div className={styles.animation}>
                     <Lottie

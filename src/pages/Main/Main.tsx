@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 
 import { ViewerCard } from '@/widgets/ViewerCard'
 import { PageLayout } from '@/shared/ui/PageLayout'
@@ -6,16 +6,14 @@ import { RemainsCard } from '@/widgets/RemainsCard'
 import { KingList } from '@/widgets/KingList'
 
 import styles from './Main.module.scss'
-import {useGetInLineModal} from "@/widgets/GetInLineModal/model";
+import {GetInLineModal} from "@/widgets/GetInLineModal/GetInLineModal";
 
 export const Main = () => {
-    const { opened, isGetInLineModal } = useGetInLineModal()
+    const [isOpen, setIsOpen] = useState(false)
 
     useEffect(() => {
-        if (!isGetInLineModal) {
-            opened()
-        }
-    }, [opened, isGetInLineModal]);
+        setIsOpen(true)
+    }, []);
 
     return (
         <>
@@ -23,6 +21,7 @@ export const Main = () => {
                 <ViewerCard />
                 <RemainsCard className={styles['remains-card']} />
                 <KingList />
+                <GetInLineModal isActive={isOpen} onClose={() => setIsOpen(false)} />
             </PageLayout>
         </>
     )
