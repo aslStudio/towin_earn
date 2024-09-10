@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useMemo} from "react";
 import { createPortal } from "react-dom";
 
 import { Card } from "../Card";
@@ -17,12 +17,17 @@ export const Modal = React.memo<ModalProps>(({
     withOverlay = false,
     onClose
 }) => {
+    const classes = useMemo(() => [
+        styles.root,
+        isActive ? styles['is-active'] : '',
+        withOverlay ? styles['with-overlay'] : '',
+    ].join(' '), [
+        isActive,
+        withOverlay,
+    ])
+
     return createPortal(
-        <div className={[
-            styles.root,
-            isActive ? styles['is-active'] : '',
-            withOverlay ? styles['with-overlay'] : '',
-        ].join(' ')}>
+        <div className={classes}>
             {withOverlay && (
                 <div 
                     className={styles.overlay} 
