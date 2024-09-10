@@ -17,13 +17,13 @@ function App() {
     });
 
   return (
-      <BrowserRouter>
-        <ToasterProvider>
+      <ToasterProvider>
+          <BrowserRouter>
             <RouterView/>
-        </ToasterProvider>
-        <TopListModal />
-        <GetInLineModal />
-      </BrowserRouter>
+          </BrowserRouter>
+          <TopListModal />
+          <GetInLineModal />
+      </ToasterProvider>
   );
 }
 
