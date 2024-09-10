@@ -1,6 +1,7 @@
 @import "variables";
 
 $mainFontFamily: 'Inter';
+$monoFontFamily: 'SFMono';
 
 @font-face {
     font-family: $mainFontFamily;
@@ -26,6 +27,33 @@ $mainFontFamily: 'Inter';
             local('MainFont'),
             url("../../shared/assets/fonts/Inter-Bold.woff") format('woff'),
             url("../../shared/assets/fonts/Inter-Bold.woff2") format('woff2');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: $monoFontFamily;
+    src:
+            local('MonoFontFamily'),
+            url("../../shared/assets/fonts/SFMono-Regular.woff") format('woff'),
+            url("../../shared/assets/fonts/SFMono-Regular.woff2") format('woff2');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: $monoFontFamily;
+    src:
+            local('MonoFontFamily'),
+            url("../../shared/assets/fonts/SFMono-Semibold.woff") format('woff'),
+            url("../../shared/assets/fonts/SFMono-Semibold.woff2") format('woff2');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: $monoFontFamily;
+    src:
+            local('MonoFontFamily'),
+            url("../../shared/assets/fonts/SFMono-Bold.woff") format('woff'),
+            url("../../shared/assets/fonts/SFMono-Bold.woff2") format('woff2');
     font-weight: 700;
 }
 

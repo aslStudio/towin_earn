@@ -37,10 +37,22 @@ export const useTimer = (startTime: number, type: 'up' | 'down' = 'down') => {
             const minutes = Math.floor(milliseconds / 60000);
             milliseconds %= 60000;
             const seconds = Math.floor(milliseconds / 1000);
-            return `${days < 10 ? `0${days}` : days} Days : ${hours < 10 ? `0${hours}` : hours} Hr : ${minutes < 10 ? `0${minutes}` : minutes} Min : ${seconds < 10 ? `0${seconds}` : seconds} Sec`;
+
+            return {
+                d: days < 10 ? `0${days}` : days,
+                h: hours < 10 ? `0${hours}` : hours,
+                m: minutes < 10 ? `0${minutes}` : minutes,
+                s: seconds < 10 ? `0${seconds}` : seconds,
+            }
         }
 
-        return '00 Days : 00 Hr : 00 Min : 00 Sec'
+        return {
+            d: 0,
+            h: 0,
+            m: 0,
+            s: 0
+        }
+        // return '00 Days : 00 Hr : 00 Min : 00 Sec'
     }, [currTime])
 
     useEffect(() => {

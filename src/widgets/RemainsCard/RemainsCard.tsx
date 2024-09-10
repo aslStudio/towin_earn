@@ -57,7 +57,12 @@ export const RemainsCard = React.memo<RemainsCardProps>(({ className }) => {
                         onClick={openToaster}
                     />
                 </div>
-                <p className={styles.timer}>{namedView}</p>
+                <p className={styles.timer}>
+                    <span>{namedView.d}</span> Days :
+                    <span>{namedView.h}</span> Hr :
+                    <span>{namedView.m}</span> Min :
+                    <span>{namedView.s}</span> Sec
+                </p>
                 <div className={styles.divider} />
                 <div className={styles.row}>
                     <div className={styles.info}>
