@@ -9,12 +9,7 @@ import styles from './Main.module.scss'
 import {GetInLineModal} from "@/widgets/GetInLineModal/GetInLineModal";
 
 export const Main = () => {
-    const [isOpen, setIsOpen] = useState(false)
-
-    useEffect(() => {
-        alert('OPEN MODAL')
-        setIsOpen(true)
-    }, []);
+    const [isOpen, setIsOpen] = useState(true)
 
     return (
         <>
