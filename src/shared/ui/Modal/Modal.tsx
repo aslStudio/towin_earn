@@ -23,10 +23,6 @@ export const Modal = React.memo<ModalProps>(({
         isActive,
     ])
 
-    useEffect(() => {
-        alert(classes)
-    }, [classes]);
-
     return createPortal(
         <div className={classes}>
             <div
