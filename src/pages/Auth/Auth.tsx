@@ -10,13 +10,15 @@ import { useNavigate } from "react-router-dom"
 export const Auth = () => {
     const navigate = useNavigate()
 
-    const { setHeaderColor, shareToStory } = useTelegram()
+    const { setHeaderColor, shareToStory, haptic } = useTelegram()
     
     function onLetsGo() {
+        haptic()
         navigate('/last')
     }
 
     function onShare() {
+        haptic()
         shareToStory(
             'https://drive.google.com/u/0/drive-viewer/AKGpihYISBUbfor_kXlJhWilUnjxr7sl_F7rPlLC6rTpup1ch2qiyKW1BJRL9qEb5l6u8GxxHBrZwixzaI1WyYd1eU_KMJrHVuXMKOA=s1600-rw-v1',
             {

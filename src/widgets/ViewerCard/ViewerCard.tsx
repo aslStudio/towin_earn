@@ -8,12 +8,12 @@ import styles from './ViewerCard.module.scss'
 import { useTimer } from '@/shared/lib/hooks/useTimer'
 import { Avatar } from '@/shared/ui/Avatar'
 import { images } from '@/shared/assets'
-import { useNavigate } from 'react-router-dom'
+import {useTelegram} from "@/shared/lib/hooks/useTelegram";
 
 const image = 'https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL3BsYXlcLzBiN2Y0ZTliLWY1OWMtNDAyNC05ZjA2LWIzZGMxMjg1MGFiNy0xOTIwLTEwODAuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo4Mjh9fX0='
 
 export const ViewerCard = () => {
-    const navigate = useNavigate()
+    const { haptic } = useTelegram()
 
     const { dottedViewWithHours } = useTimer(1_000_000, 'up')
 
@@ -40,7 +40,8 @@ export const ViewerCard = () => {
             size="m"
             weight="semibold"
             onClick={() => {
-                navigate('/record')
+                haptic()
+                // navigate('/record')
             }}
         >
             Become a King

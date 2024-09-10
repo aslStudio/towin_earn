@@ -7,6 +7,7 @@ import { KingList } from '@/widgets/KingList'
 
 import styles from './Main.module.scss'
 import { useGetInLineModal } from '@/widgets/GetInLineModal/model'
+import {GetInLineModal} from "@/widgets/GetInLineModal/GetInLineModal";
 
 export const Main = () => {
     const { opened } = useGetInLineModal()
@@ -21,6 +22,7 @@ export const Main = () => {
                 <ViewerCard />
                 <RemainsCard className={styles['remains-card']} />
                 <KingList />
+                <GetInLineModal />
             </PageLayout>
         </>
     )

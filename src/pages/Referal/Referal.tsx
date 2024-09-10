@@ -15,16 +15,18 @@ const mockReferral = 'tow.im/ceosashajdjdjdjdjdjjdjdjdjjjjjjj'
 export const Referral = () => {
     const navigate = useNavigate()
 
-    const { setHeaderColor, shareToStory } = useTelegram()
+    const { setHeaderColor, shareToStory, haptic } = useTelegram()
     const [_, copy] = useCopyToClipboard()
     const [isLoading, setIsLoading] = useState(true)
     
     function onLetsGo() {
+        haptic()
         navigate('/last')
         setHeaderColor('#FFFFFF')
     }
 
     function onShare() {
+        haptic()
         shareToStory(
             'https://drive.google.com/u/0/drive-viewer/AKGpihby-tHD5atYK6isl1y8h_B8m2WpLvCE_nKAmkkHaAj_lyuXf7TjIhK5VP7Jlven2-Vs9KnvCpvtAQ52WKFDC3ej23PcawroHbY=s1600-rw-v1',
             {

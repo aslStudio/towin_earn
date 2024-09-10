@@ -4,7 +4,6 @@ import { Avatar } from "@/shared/ui/Avatar"
 import { Button } from "@/shared/ui/Button"
 
 import styles from './GetInLineModal.module.scss'
-import { useGetInLineModal } from './model'
 import { Modal } from "@/shared/ui/Modal"
 import { lineModel } from "@/features/line"
 import { useTelegram } from "@/shared/lib/hooks/useTelegram"
@@ -14,8 +13,7 @@ import LottieConfig from "@/shared/assets/animations/test.json";
 const image = 'https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL3BsYXlcLzBiN2Y0ZTliLWY1OWMtNDAyNC05ZjA2LWIzZGMxMjg1MGFiNy0xOTIwLTEwODAuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo4Mjh9fX0='
 
 export const GetInLineModal = React.memo(() => {
-    const { isMobileDevice } = useTelegram()
-    const { isGetInLineModal, closed } = useGetInLineModal()
+    const { isMobileDevice, haptic } = useTelegram()
     const { currentLinePositions, currentLinePositionUpdated } = lineModel.useCurrentLinePositions()
     const { isAnimation, animationHidden } = lineModel.useSuccessAnimation()
     const [bottomOffset, setBottomOffset] = useState(0)
@@ -41,8 +39,8 @@ export const GetInLineModal = React.memo(() => {
     return (
         <Modal 
             withOverlay={false} 
-            isActive={isGetInLineModal} 
-            onClose={closed}>
+            isActive={true}
+            onClose={() => {}}>
             {isAnimation && (
                 <div className={styles.animation}>
                     <Lottie
@@ -70,7 +68,10 @@ export const GetInLineModal = React.memo(() => {
                     className={styles.button}
                     view={buttonView} 
                     size="s" 
-                    onClick={currentLinePositionUpdated}>
+                    onClick={() => {
+                        currentLinePositionUpdated()
+                        haptic()
+                    }}>
                     Get in line
                 </Button>
             </div>
