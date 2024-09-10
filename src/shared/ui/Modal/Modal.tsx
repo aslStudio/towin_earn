@@ -14,16 +14,13 @@ export type ModalProps = React.PropsWithChildren<{
 export const Modal = React.memo<ModalProps>(({
     children,
     isActive,
-    withOverlay = false,
     onClose
 }) => {
     const classes = useMemo(() => [
         styles.root,
         isActive ? styles['is-active'] : '',
-        withOverlay ? styles['with-overlay'] : '',
     ].join(' '), [
         isActive,
-        withOverlay,
     ])
 
     useEffect(() => {
