@@ -20,8 +20,8 @@ export const Modal = React.memo<ModalProps>(({
     return createPortal(
         <div className={[
             styles.root,
-            isActive && styles['is-active'],
-            withOverlay && styles['with-overlay']
+            isActive ? styles['is-active'] : '',
+            withOverlay ? styles['with-overlay'] : '',
         ].join(' ')}>
             {withOverlay && (
                 <div 
