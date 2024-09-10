@@ -20,8 +20,9 @@ function App() {
       <BrowserRouter>
         <ToasterProvider>
             <RouterView/>
-            <TopListModal />
         </ToasterProvider>
+        <TopListModal />
+        <GetInLineModal />
       </BrowserRouter>
   );
 }

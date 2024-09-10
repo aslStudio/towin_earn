@@ -23,7 +23,6 @@ export const Main = () => {
                 <RemainsCard className={styles['remains-card']} />
                 <KingList />
             </PageLayout>
-            <GetInLineModal />
         </>
     )
 }
