@@ -1,4 +1,4 @@
-import React, {useMemo} from "react";
+import React, {useEffect, useMemo} from "react";
 import { createPortal } from "react-dom";
 
 import { Card } from "../Card";
@@ -25,6 +25,10 @@ export const Modal = React.memo<ModalProps>(({
         isActive,
         withOverlay,
     ])
+
+    useEffect(() => {
+        alert(classes)
+    }, [classes]);
 
     return createPortal(
         <div className={classes}>
