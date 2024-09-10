@@ -19,7 +19,7 @@ export const GetInLineModal = React.memo<{
     const { isMobileDevice, haptic } = useTelegram()
     const { currentLinePositions, currentLinePositionUpdated } = lineModel.useCurrentLinePositions()
     const { isAnimation, animationHidden } = lineModel.useSuccessAnimation()
-    const [bottomOffset, setBottomOffset] = useState(0)
+    const [bottomOffset, setBottomOffset] = useState(20)
 
     const onFocus = useCallback(() => {
         if (isMobileDevice) {
