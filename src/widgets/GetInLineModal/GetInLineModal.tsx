@@ -12,6 +12,8 @@ import LottieConfig from "@/shared/assets/animations/test.json";
 
 const image = 'https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL3BsYXlcLzBiN2Y0ZTliLWY1OWMtNDAyNC05ZjA2LWIzZGMxMjg1MGFiNy0xOTIwLTEwODAuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo4Mjh9fX0='
 
+let timeout: NodeJS.Timeout
+
 export const GetInLineModal = React.memo<{
     isActive: boolean
     onClose: () => void
@@ -28,7 +30,10 @@ export const GetInLineModal = React.memo<{
     }, [isMobileDevice])
 
     function onBlur() {
-        setBottomOffset(0)
+        timeout = setTimeout(() => {
+            setBottomOffset(0)
+            clearTimeout(timeout)
+        }, 100)
     }
 
     const buttonView = useMemo(() => {

@@ -68,7 +68,7 @@ const KingCell = React.memo<KingCellProps>(({
     isFirst,
     isLast,
 }) => {
-    const { dottedViewWithoutHours } = useTimer(time)
+    const { ms } = useTimer(time)
 
     if (isFirst) {
         return (
@@ -77,7 +77,9 @@ const KingCell = React.memo<KingCellProps>(({
                     <div className={styles['king-cell']}>
                         <IconBase className={styles.icon} icon={'icon-sticker'} width={28} height={28} />
                         <InfoCell title={title} description={description} />
-                        <p className={styles.timer}>⏱️ {dottedViewWithoutHours}</p>
+                        <p className={styles.timer}>
+                            ⏱️ <span>{ms.m}</span>:<span>{ms.s}</span>
+                        </p>
                     </div>
                 </Card>
                 <div className={styles.divider} />

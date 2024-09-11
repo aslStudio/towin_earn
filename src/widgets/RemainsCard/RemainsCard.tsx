@@ -7,17 +7,20 @@ import { useToaster } from "@/shared/lib/providers"
 import { useCopyToClipboard } from "@/shared/lib/hooks/useCopy"
 import star from '@/shared/assets/animations/star.json'
 import lock from '@/shared/assets/animations/lock.json'
+import background from '@/shared/assets/animations/background-stars.json'
 
 import styles from './RemainsCard.module.scss'
 import Lottie from "react-lottie";
+import {useTelegram} from "@/shared/lib/hooks/useTelegram";
 
 export type RemainsCardProps = {
     className?: string
 }
 
 export const RemainsCard = React.memo<RemainsCardProps>(({ className }) => {
-    const { namedView } = useTimer(4708000050)
+    const { dhms } = useTimer(4708000050)
     const [_, copy] = useCopyToClipboard()
+    const { haptic } = useTelegram()
 
     const { open } = useToaster()
 
@@ -54,14 +57,17 @@ export const RemainsCard = React.memo<RemainsCardProps>(({ className }) => {
                         icon="icon-help" 
                         width={20} 
                         height={20} 
-                        onClick={openToaster}
+                        onClick={() => {
+                            haptic()
+                            openToaster()
+                        }}
                     />
                 </div>
                 <p className={styles.timer}>
-                    <span>{namedView.d}</span> Days :
-                    <span>{namedView.h}</span> Hr :
-                    <span>{namedView.m}</span> Min :
-                    <span>{namedView.s}</span> Sec
+                    <span>{dhms.d}</span> Days :
+                    <span>{dhms.h}</span> Hr :
+                    <span>{dhms.m}</span> Min :
+                    <span>{dhms.s}</span> Sec
                 </p>
                 <div className={styles.divider} />
                 <div className={styles.row}>
@@ -73,7 +79,10 @@ export const RemainsCard = React.memo<RemainsCardProps>(({ className }) => {
                                 icon="icon-help" 
                                 width={20} 
                                 height={20} 
-                                onClick={openToaster}
+                                onClick={() => {
+                                    haptic()
+                                    openToaster()
+                                }}
                             />
                         </div>
                         <p className={styles.amount}>256K</p>
@@ -85,6 +94,16 @@ export const RemainsCard = React.memo<RemainsCardProps>(({ className }) => {
                 </div>
             </Card>
             <div className={styles.response}>
+                <div className={styles.animation}>
+                    <Lottie
+                        options={{
+                            loop: true,
+                            animationData: background
+                        }}
+                        width={window.innerWidth}
+                        height={150}
+                    />
+                </div>
                 <h5 className={styles['response-title']}>
                     Who’s the last one? <br />
                     The last player will receive
@@ -104,7 +123,10 @@ export const RemainsCard = React.memo<RemainsCardProps>(({ className }) => {
                     <p className={styles['response-amount']}>10,000</p>
                     <div
                         className={styles.present}
-                        onClick={openReferalToaster}
+                        onClick={() => {
+                            haptic()
+                            openReferalToaster()
+                        }}
                     >
                         <Lottie
                             options={{

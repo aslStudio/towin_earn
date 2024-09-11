@@ -15,7 +15,7 @@ const image = 'https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpY
 export const ViewerCard = () => {
     const { haptic } = useTelegram()
 
-    const { dottedViewWithHours } = useTimer(1_000_000, 'up')
+    const { hms } = useTimer(1_000_000, 'up')
 
     return <Card size="l">
         <div className={styles.wrapper}>
@@ -25,7 +25,9 @@ export const ViewerCard = () => {
                 size='s' />
             <div>
                 <InfoCell title="Alex_007" description="Продам гараж" />
-                <p className={styles.timer}>⏱️ {dottedViewWithHours}</p>
+                <p className={styles.timer}>
+                    ⏱️<span>{hms.h}</span>:<span>{hms.m}</span>:<span>{hms.s}</span>
+                </p>
             </div>
             <img
                 className={styles.sticker} 

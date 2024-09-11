@@ -5,28 +5,43 @@ let interval: NodeJS.Timeout
 export const useTimer = (startTime: number, type: 'up' | 'down' = 'down') => {
     const [currTime, setCurrTime] = useState(startTime)
 
-    const dottedViewWithHours = useMemo(() => {
+    const hms = useMemo(() => {
         if (currTime > 0) {
             const hours = Math.floor(currTime / 3600000);
             const minutes = Math.floor((currTime % 3600000) / 60000);
             const seconds = Math.floor((currTime % 60000) / 1000);
-            return `${hours < 10 ? '0' + hours : hours}:${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+            return {
+                h: hours < 10 ? '0' + hours : hours,
+                m: minutes < 10 ? '0' + minutes : minutes,
+                s: seconds < 10 ? '0' + seconds : seconds
+            }
         }
 
-        return '00:00:00'
+        return {
+            h: '00',
+            m: '00',
+            s: '00'
+        }
     }, [currTime])
 
-    const dottedViewWithoutHours = useMemo(() => {
+    const ms = useMemo(() => {
         if (currTime > 0) {
             const minutes = Math.floor(currTime / 60000);
             const seconds = Math.floor((currTime % 60000) / 1000);
-            return `${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
+
+            return {
+                m: minutes < 10 ? '0' + minutes : minutes,
+                s: seconds < 10 ? '0' + seconds : seconds
+            }
         }
 
-        return '00:00'
+        return {
+            m: '00',
+            s: '00'
+        }
     }, [currTime])
 
-    const namedView = useMemo(() => {
+    const dhms = useMemo(() => {
         if (currTime > 0) {
             let milliseconds = currTime
 
@@ -47,10 +62,10 @@ export const useTimer = (startTime: number, type: 'up' | 'down' = 'down') => {
         }
 
         return {
-            d: 0,
-            h: 0,
-            m: 0,
-            s: 0
+            d: '00',
+            h: '00',
+            m: '00',
+            s: '00'
         }
         // return '00 Days : 00 Hr : 00 Min : 00 Sec'
     }, [currTime])
@@ -71,8 +86,8 @@ export const useTimer = (startTime: number, type: 'up' | 'down' = 'down') => {
     }, [startTime, type])
 
     return {
-        dottedViewWithHours,
-        dottedViewWithoutHours,
-        namedView,
+        hms,
+        ms,
+        dhms,
     }
 }

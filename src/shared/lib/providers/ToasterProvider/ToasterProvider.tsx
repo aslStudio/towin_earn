@@ -3,6 +3,7 @@ import React, { createContext, useCallback, useContext, useEffect, useState } fr
 import styles from './ToasterProvider.module.scss'
 import { Button } from "@/shared/ui/Button"
 import { IconBase } from "@/shared/ui/IconBase"
+import {useTelegram} from "@/shared/lib/hooks/useTelegram";
 
 type ToasterParams = {
     title: string
@@ -25,6 +26,8 @@ let closeTimeout: NodeJS.Timeout
 export const ToasterProvider = React.memo<React.PropsWithChildren>(({
     children
 }) => {
+    const { haptic } = useTelegram()
+
     const [ params, setParams ] = useState<ToasterParams | null>(null)
     const [ isActive, setIsActive ] = useState(false)
 
@@ -37,6 +40,7 @@ export const ToasterProvider = React.memo<React.PropsWithChildren>(({
             timeout = setTimeout(() => {
                 setParams(data)
                 setIsActive(true)
+                clearTimeout(timeout)
             }, 300)
         }
     }, [isActive])
@@ -68,6 +72,7 @@ export const ToasterProvider = React.memo<React.PropsWithChildren>(({
                         view="blue" 
                         size="s" 
                         onClick={() => {
+                            haptic()
                             setIsActive(false)
                             params?.action()
                         }}>
@@ -79,7 +84,10 @@ export const ToasterProvider = React.memo<React.PropsWithChildren>(({
                     icon={'icon-close'} 
                     width={28} 
                     height={28} 
-                    onClick={() => setIsActive(false)}
+                    onClick={() => {
+                        haptic()
+                        setIsActive(false)
+                    }}
                 />
             </div>
             {children}
