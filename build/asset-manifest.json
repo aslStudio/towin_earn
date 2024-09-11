@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.954fd02e.css",
+    "main.css": "/static/css/main.21cc9280.css",
     "main.js": "/static/js/main.af3a8bcd.js",
     "static/js/453.70514826.chunk.js": "/static/js/453.70514826.chunk.js",
     "static/media/background.png": "/static/media/background.1c370eae9f857f150686.png",
@@ -21,12 +21,12 @@
     "static/media/icon-star-gold.png": "/static/media/icon-star-gold.e50055d67a3e2839353f.png",
     "static/media/spinner-brand.png": "/static/media/spinner-brand.3c00c228cbb050a75c46.png",
     "index.html": "/index.html",
-    "main.954fd02e.css.map": "/static/css/main.954fd02e.css.map",
+    "main.21cc9280.css.map": "/static/css/main.21cc9280.css.map",
     "main.af3a8bcd.js.map": "/static/js/main.af3a8bcd.js.map",
     "453.70514826.chunk.js.map": "/static/js/453.70514826.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.954fd02e.css",
+    "static/css/main.21cc9280.css",
     "static/js/main.af3a8bcd.js"
   ]
 }
