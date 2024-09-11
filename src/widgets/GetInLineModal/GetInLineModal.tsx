@@ -31,7 +31,7 @@ export const GetInLineModal = React.memo<{
 
     function onBlur() {
         timeout = setTimeout(() => {
-            setBottomOffset(0)
+            setBottomOffset(20)
             clearTimeout(timeout)
         }, 100)
     }
